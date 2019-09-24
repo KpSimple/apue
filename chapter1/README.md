@@ -54,6 +54,3 @@ getuid和getgid返回用户ID和组ID
 ---
 signal指定某种信号的处理方式
 waitpid等待进程结束
-
-1.5
----
