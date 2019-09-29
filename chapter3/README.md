@@ -1,7 +1,7 @@
 *  1  
 int open(const char *pathname, int oflag,.../*, mode_t mode * / )  
 仅当创建新文件时才使用第三个参数
-创建函数时需要关注下
+新版本的open才有创建的功能
 *  2  
 int creat(const char *pathname, mode_t mode)  
 S_IRUSR：用户读权限  
