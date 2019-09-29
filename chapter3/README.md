@@ -16,3 +16,6 @@ int close (int filedes)
 *  4  
 off_t lseek(int filedes, off_to ffset, int whence)  
 *  5  
+ssize_t write(int filedes, const void *buff, size_tn bytes)  
+*  6
+ssize_t read(int filedes, void *buff, size_tn bytes)  
