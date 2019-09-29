@@ -17,5 +17,14 @@ int close (int filedes)
 off_t lseek(int filedes, off_to ffset, int whence)  
 *  5  
 ssize_t write(int filedes, const void *buff, size_tn bytes)  
-*  6
+*  6  
 ssize_t read(int filedes, void *buff, size_tn bytes)  
+*  7
+int dup(int oldfd)  
+dup(fd)等效于   
+fcntl(fd, F_DUPFD, 0)  
+*  8  
+int dup2(int fd, int fd2)  
+dup2(oldfd, newfd)等效于   
+close(oldfd)  
+fcntl(oldfd, F_DUPFD, newfd)  
