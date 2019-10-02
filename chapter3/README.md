@@ -40,6 +40,7 @@ void sync(void)
 **标准的I/O函数（如fread,fwrite）会在内存建立缓冲，该函数刷新内存缓冲，将内容写入内核缓冲，要想将其写入磁盘，还需要调用fsync（先调用fflsuh然后再调用fsync，否则不起作用）  
 内存缓冲-----fflush---------〉内核缓冲--------fsync-----〉磁盘**
 * 12  
-int fcntl(int fd, int cmd)
-int fcntl(int fd, int cmd, long arg)
-int fcntl(int fd, int cmd ,struct flock* lock)
+int fcntl(int fd, int cmd)  
+int fcntl(int fd, int cmd, long arg)    
+int fcntl(int fd, int cmd ,struct flock* lock)  
+![](https://github.com/KpSimple/apue/blob/master/chapter3/fcntl.png)
