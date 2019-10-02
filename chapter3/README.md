@@ -28,3 +28,18 @@ int dup2(int fd, int fd2)
 dup2(oldfd, newfd)等效于   
 close(oldfd)  
 fcntl(oldfd, F_DUPFD, newfd)  
+*  9  
+int fsync(int fd)  
+只对由文件描述符fd指定的一个文件起作用，并且等待写磁盘操作结束才返回。
+*  10  
+int fdatasync(int fd)  
+类似于fsync，但是它只影响文件的数据部分。而除数据外，fsync还会同步更新文件的属性。
+* 11  
+void sync(void)  
+该函数只是将所有修改过的块缓冲区排入写队列，然后就返回，他并不等待实际写磁盘操作结束  
+**标准的I/O函数（如fread,fwrite）会在内存建立缓冲，该函数刷新内存缓冲，将内容写入内核缓冲，要想将其写入磁盘，还需要调用fsync（先调用fflsuh然后再调用fsync，否则不起作用）  
+内存缓冲-----fflush---------〉内核缓冲--------fsync-----〉磁盘**
+* 12  
+int fcntl(int fd, int cmd)
+int fcntl(int fd, int cmd, long arg)
+int fcntl(int fd, int cmd ,struct flock* lock)
