@@ -80,3 +80,37 @@ int fchown(int filedes, uid_t owner, gid_t group)
 int lchown(const char *pathname, uid_t owner, gid_t group)  
 chown函数可用于更改文件的用户ID和组ID。
 * 6  
+int link(const char * existingpath, const char *newpath)  
+创建一个向现存文件连接的方法是使用link函数。 
+* 7  
+int unlink(const char *pathname)  
+为了删除一个现存的目录项，可以调用unlink函数。  
+* 8  
+int remove(const char *pathname)  
+我们也可以用remove函数解除对一个文件或目录的连接。对于文件， remove的功能与unlink相同。  
+对于目录， remove的功能与rmdir相同。  
+可以用于删除文件和目录
+* 9  
+int rename(const char *oldname, const char * newname)  
+文件或目录用rename函数更名。  
+* 10  
+int symlink(const char * actualpath, const char *sympath )  
+symlink函数创建一个符号连接。  
+* 11  
+int readlink(const char * pathname, char *buf, int bufsize)  
+因为open函数跟随符号连接，所以需要有一种方法打开该连接本身，并读该连接中的名字。
+readlink函数提供了这种功能。  
+* 12  
+int utime(const char *pathname, const struct utimbuf * times)
+一个文件的存取和修改时间可以用utime函数更改。  
+struct utimbuf   
+{  
+time_t actime; /*access time*/
+time_t modtime; /*modification time*/
+}  
+* 13  
+int mkdir(const char *pathname, mode_t mode)  
+int rmdir(const char *pathname)  
+用mkdir函数创建目录，用rmdir函数删除目录。  
+* 14  
+
