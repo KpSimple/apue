@@ -42,7 +42,7 @@ b(banary)：二进制文件
 "b"           二进制文件(可以和上面每一项合用)          
 "t"           文这文件(默认项)  
 
-使用方式及含义
+使用方式及含义  
 “rt”　　　　　　只读打开一个文本文件，只允许读数据  
 “wt”　　　　　　只写打开或建立一个文本文件，只允许写数据  
 “at”　　　　　　追加打开一个文本文件，并在文件末尾写数据  
@@ -67,5 +67,11 @@ b(banary)：二进制文件
 ### FILE *fdopen(int filedes, const char *type)  
 打开一个现存的文件描述符  
 6.  
-int fclose(FILE *fp)  
+### int fclose(FILE *fp)  
+7.  
+### int getc(FILE *fp)  
+### int fgetc(FILE *fp)
+### int getchar(void)  
+三个函数的返回：若成功则为下一个字符，若已处文件尾端或出错则为EOF
+8.  
 
