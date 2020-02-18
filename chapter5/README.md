@@ -1,6 +1,6 @@
 本章说明了标准I/O库的相关函数  
 1.    
-# void setbuf(FILE *fp, char *buf );  
+### void setbuf(FILE *fp, char *buf );  
 buf:  
 nonnull 长度为BUFSIZE的用户缓存全缓存或行缓存  
 NULL （无缓存） 不带缓存  
@@ -15,11 +15,11 @@ buf:
 nonnull 长度为BUFSIZE的用户缓存  
 NULL (无缓存)  
 2.  
-# int fflush(FILE *fp) ;
+### int fflush(FILE *fp) ;
 返回：若成功则为0，若出错则为EOF  
 此函数使该流所有未写的数据都被传递至内核  
 3.  
-# FILE *fopen(const char *pathname, const char *type);
+### FILE *fopen(const char *pathname, const char *type);
 若成功则为文件指针，若出错则为NULL
 
 pathname，文件名
@@ -60,4 +60,12 @@ b(banary)：二进制文件
 ②　用”w”打开文件时，若文件不存在，则创建，若存在，则将其删除，再创建一个文件
 ③　用”a”打开文件时，可在其末尾写数据
 
+4.
+### FILE *freopen(const char *pathname, const char *type, FILE *fp)
+常用来重定向了标准流，用pathname的流代替fp
+5.  
+### FILE *fdopen(int filedes, const char *type)
+打开一个现存的文件描述符
+6.  
+int fclose(FILE *fp)
 
